@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://zaltron-robotics.zaltronrobotics.workers.dev/</loc></url>
-  <url><loc>https://zaltron-robotics.zaltronrobotics.workers.dev/about</loc></url>
   <url><loc>https://zaltron-robotics.zaltronrobotics.workers.dev/robots</loc></url>
+  <url><loc>https://zaltron-robotics.zaltronrobotics.workers.dev/robots/zaltron-v1</loc></url>
   <url><loc>https://zaltron-robotics.zaltronrobotics.workers.dev/robots/v1</loc></url>
   <url><loc>https://zaltron-robotics.zaltronrobotics.workers.dev/robots/scout</loc></url>
   <url><loc>https://zaltron-robotics.zaltronrobotics.workers.dev/robots/guard</loc></url>
@@ -12,9 +12,15 @@
   <url><loc>https://zaltron-robotics.zaltronrobotics.workers.dev/robots/med</loc></url>
   <url><loc>https://zaltron-robotics.zaltronrobotics.workers.dev/robots/farm</loc></url>
   <url><loc>https://zaltron-robotics.zaltronrobotics.workers.dev/robots/sky</loc></url>
+  <url><loc>https://zaltron-robotics.zaltronrobotics.workers.dev/robots/dock</loc></url>
+  <url><loc>https://zaltron-robotics.zaltronrobotics.workers.dev/robots/hub</loc></url>
   <url><loc>https://zaltron-robotics.zaltronrobotics.workers.dev/technology</loc></url>
-  <url><loc>https://zaltron-robotics.zaltronrobotics.workers.dev/projects</loc></url>
-  <url><loc>https://zaltron-robotics.zaltronrobotics.workers.dev/company</loc></url>
+  <url><loc>https://zaltron-robotics.zaltronrobotics.workers.dev/research</loc></url>
+  <url><loc>https://zaltron-robotics.zaltronrobotics.workers.dev/solutions</loc></url>
+  <url><loc>https://zaltron-robotics.zaltronrobotics.workers.dev/roadmap</loc></url>
+  <url><loc>https://zaltron-robotics.zaltronrobotics.workers.dev/about</loc></url>
+  <url><loc>https://zaltron-robotics.zaltronrobotics.workers.dev/careers</loc></url>
+  <url><loc>https://zaltron-robotics.zaltronrobotics.workers.dev/journal</loc></url>
   <url><loc>https://zaltron-robotics.zaltronrobotics.workers.dev/contact</loc></url>
   <url><loc>https://zaltron-robotics.zaltronrobotics.workers.dev/privacy</loc></url>
   <url><loc>https://zaltron-robotics.zaltronrobotics.workers.dev/terms</loc></url>
