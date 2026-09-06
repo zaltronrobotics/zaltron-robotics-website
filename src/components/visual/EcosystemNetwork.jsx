@@ -33,12 +33,36 @@ export function EcosystemNetwork() {
     <div className="ecosystem-container">
       {/* Desktop Orbital Interactive Diagram */}
       <div className="ecosystem-desktop">
+        {/* Animated SVG Connection Conduits */}
+        <svg className="eco-conduits-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+          {/* Conduit to V1 */}
+          <line x1="50" y1="50" x2="50" y2="16" className="conduit-path" />
+          {/* Conduits to each orbital satellite */}
+          {orbitalRobots.map((robot, idx) => {
+            const angle = (idx / orbitalRobots.length) * 2 * Math.PI - Math.PI / 2 + 0.35;
+            const radius = idx % 2 === 0 ? 250 : 220;
+            const x = 50 + (radius / 3.4) * Math.cos(angle);
+            const y = 50 + (radius / 3.4) * Math.sin(angle);
+            return (
+              <line
+                key={`conduit-${robot.slug}`}
+                x1="50"
+                y1="50"
+                x2={x}
+                y2={y}
+                className="conduit-path"
+                strokeOpacity={activeSlug === robot.slug ? 0.6 : 0.22}
+              />
+            );
+          })}
+        </svg>
+
         {/* Orbital rings */}
         <div className="eco-ring inner" />
         <div className="eco-ring outer" />
 
         {/* Central Core: ZALTRON HUB */}
-        <Link 
+        <Link
           to="/robots/hub"
           className="eco-core-node"
           onMouseEnter={() => setActiveSlug('hub')}
@@ -99,7 +123,7 @@ export function EcosystemNetwork() {
         })}
 
         {/* Active Node Detail Card (Floating in bottom corner on desktop) */}
-        <div 
+        <div
           style={{
             position: 'absolute',
             bottom: '1.5rem',
@@ -121,16 +145,16 @@ export function EcosystemNetwork() {
           <p style={{ fontSize: '0.875rem', marginBottom: '1rem', color: 'var(--text-secondary)' }}>
             {activeRobot.summary}
           </p>
-          <Link 
-            to={`/robots/${activeRobot.slug}`} 
-            style={{ 
-              display: 'inline-flex', 
-              alignItems: 'center', 
-              gap: '0.4rem', 
-              fontFamily: 'var(--font-mono)', 
-              fontSize: '0.75rem', 
+          <Link
+            to={`/robots/${activeRobot.slug}`}
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.4rem',
+              fontFamily: 'var(--font-mono)',
+              fontSize: '0.75rem',
               color: 'var(--accent-blue)',
-              textTransform: 'uppercase' 
+              textTransform: 'uppercase'
             }}
           >
             <span>Explore {activeRobot.name}</span>

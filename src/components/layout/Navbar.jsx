@@ -4,6 +4,7 @@ import { ChevronDown, Menu, MessageSquareText, ExternalLink } from 'lucide-react
 import { site } from '../../config/site';
 import { robots } from '../../data/robots';
 import { Button } from '../ui/Button';
+import { StatusBadge } from '../ui/StatusBadge';
 
 export function Navbar({ onOpenAsk, onOpenMobileMenu }) {
   const [scrolled, setScrolled] = useState(false);
@@ -23,12 +24,12 @@ export function Navbar({ onOpenAsk, onOpenMobileMenu }) {
       <div className="container navbar-inner">
         {/* Brand Logo */}
         <Link to="/" className="nav-brand" aria-label="ZALTRON ROBOTICS Home">
-          <img 
-            src={site.logoUrl} 
-            alt="ZALTRON ROBOTICS official logo" 
-            className="nav-logo-img" 
-            width="36" 
-            height="36" 
+          <img
+            src={site.logoUrl}
+            alt="ZALTRON ROBOTICS official logo"
+            className="nav-logo-img"
+            width="36"
+            height="36"
           />
           <div className="nav-brand-text">
             <span className="nav-brand-name">{site.brandName}</span>
@@ -45,16 +46,19 @@ export function Navbar({ onOpenAsk, onOpenMobileMenu }) {
             </NavLink>
             <div className="nav-dropdown-menu">
               {robots.map((robot) => (
-                <Link 
-                  key={robot.slug} 
-                  to={`/robots/${robot.slug}`} 
+                <Link
+                  key={robot.slug}
+                  to={`/robots/${robot.slug}`}
                   className="dropdown-item"
                 >
                   <div className="dropdown-item-content">
-                    <h4>
-                      {robot.name} 
-                      <span>{robot.role}</span>
-                    </h4>
+                    <div className="dropdown-item-header">
+                      <h4>
+                        {robot.name}
+                        <span>{robot.role}</span>
+                      </h4>
+                      <StatusBadge status={robot.status} />
+                    </div>
                     <p>{robot.summary}</p>
                   </div>
                 </Link>
@@ -78,33 +82,35 @@ export function Navbar({ onOpenAsk, onOpenMobileMenu }) {
 
         {/* Action CTAs */}
         <div className="nav-actions">
-          <button 
-            onClick={onOpenAsk} 
-            className="btn btn-secondary btn-sm"
-            aria-label="Ask ZALTRON"
-            title="Ask ZALTRON verified knowledge base"
-          >
-            <MessageSquareText size={14} />
-            <span>Ask ZALTRON</span>
-          </button>
+          <div className="nav-desktop-actions">
+            <button
+              onClick={onOpenAsk}
+              className="btn btn-secondary btn-sm"
+              aria-label="Ask ZALTRON"
+              title="Ask ZALTRON verified knowledge base"
+            >
+              <MessageSquareText size={14} />
+              <span>Ask ZALTRON</span>
+            </button>
 
-          <a 
-            href={site.social.GitHub} 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="btn btn-secondary btn-sm"
-            aria-label="GitHub Repository"
-          >
-            <span>GitHub</span>
-            <ExternalLink size={12} />
-          </a>
+            <a
+              href={site.social.GitHub}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-secondary btn-sm"
+              aria-label="GitHub Repository"
+            >
+              <span>GitHub</span>
+              <ExternalLink size={12} />
+            </a>
 
-          <Button to="/robots/zaltron-v1" variant="primary" size="sm">
-            Explore V1
-          </Button>
+            <Button to="/robots/zaltron-v1" variant="primary" size="sm">
+              Explore V1
+            </Button>
+          </div>
 
-          <button 
-            className="mobile-nav-toggle" 
+          <button
+            className="mobile-nav-toggle"
             onClick={onOpenMobileMenu}
             aria-label="Open mobile navigation menu"
           >

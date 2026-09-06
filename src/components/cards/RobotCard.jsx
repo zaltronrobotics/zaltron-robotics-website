@@ -25,18 +25,17 @@ export function RobotCard({ robot, index }) {
   const isFeatured = robot.slug === 'zaltron-v1';
 
   return (
-    <Link 
-      to={`/robots/${robot.slug}`} 
+    <Link
+      to={`/robots/${robot.slug}`}
       className={`card-tech ${isFeatured ? 'featured' : ''}`}
       style={{
-        gridColumn: isFeatured ? 'span 2' : 'span 1',
         minHeight: '290px',
         justifyContent: 'space-between'
       }}
     >
       <div>
         {/* Card Header with Role & Status */}
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1.25rem' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <Icon size={16} color="var(--accent-blue)" />
             <span className="eyebrow" style={{ fontSize: '0.625rem' }}>

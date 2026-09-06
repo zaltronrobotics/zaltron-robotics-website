@@ -87,7 +87,7 @@ export function ExplorationCanvas() {
       // Update robot motion if running
       if (isRunning) {
         beamAngle += 0.08;
-        
+
         // Dynamic bounce locomotion
         rx += Math.cos(heading) * speed;
         ry += Math.sin(heading) * speed;
@@ -192,8 +192,8 @@ export function ExplorationCanvas() {
           <h4 style={{ fontSize: '1.1rem', marginTop: '0.25rem' }}>Topological Occupancy Grid Mapping</h4>
         </div>
         <div style={{ display: 'flex', gap: '0.5rem' }}>
-          <button 
-            onClick={() => setIsRunning(!isRunning)} 
+          <button
+            onClick={() => setIsRunning(!isRunning)}
             className="btn btn-secondary btn-sm"
             aria-label={isRunning ? 'Pause Simulation' : 'Play Simulation'}
           >

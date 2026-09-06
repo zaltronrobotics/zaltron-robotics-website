@@ -43,22 +43,22 @@ function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      
+
       {/* Global Navigation */}
-      <Navbar 
+      <Navbar
         onOpenAsk={() => setAskOpen(true)}
         onOpenMobileMenu={() => setMobileMenuOpen(true)}
       />
 
       {/* Global Mobile Drawer */}
-      <MobileMenu 
+      <MobileMenu
         isOpen={mobileMenuOpen}
         onClose={() => setMobileMenuOpen(false)}
         onOpenAsk={() => setAskOpen(true)}
       />
 
       {/* Global Interactive Ask ZALTRON Knowledge Console */}
-      <AskZaltronModal 
+      <AskZaltronModal
         isOpen={askOpen}
         onClose={() => setAskOpen(false)}
       />
@@ -66,7 +66,7 @@ function App() {
       {/* Application Routing */}
       <Routes>
         <Route path="/" element={<Home />} />
-        
+
         {/* Product Catalog & System Routes */}
         <Route path="/robots" element={<Robots />} />
         <Route path="/robots/zaltron-v1" element={<ZaltronV1 />} />
@@ -78,7 +78,7 @@ function App() {
         <Route path="/research" element={<Research />} />
         <Route path="/solutions" element={<Solutions />} />
         <Route path="/roadmap" element={<Roadmap />} />
-        
+
         {/* Company & Editorial */}
         <Route path="/about" element={<About />} />
         <Route path="/company" element={<About />} />
@@ -86,7 +86,7 @@ function App() {
         <Route path="/journal" element={<Journal />} />
         <Route path="/blog" element={<Journal />} />
         <Route path="/projects" element={<Research />} />
-        
+
         {/* Contact & Legal */}
         <Route path="/contact" element={<Contact />} />
         <Route path="/privacy" element={<Legal type="privacy" />} />

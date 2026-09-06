@@ -10,14 +10,14 @@ export function Journal() {
 
   return (
     <>
-      <Seo 
-        title="Engineering Journal | ZALTRON ROBOTICS" 
+      <Seo
+        title="Engineering Journal | ZALTRON ROBOTICS"
         description="Technical build logs, hardware architectures, SLAM algorithms, and physical AI insights from the ZALTRON ROBOTICS lab."
       />
 
       <main className="section-spacing bg-grid-tech">
         <div className="container">
-          <SectionHeader 
+          <SectionHeader
             eyebrow="ENGINEERING PUBLICATION"
             title="The ZALTRON Journal"
             description="Deep technical dispatches on embedded firmware, computer vision, motor mechanics, and physical artificial intelligence straight from the workbench."
@@ -26,7 +26,7 @@ export function Journal() {
           {selectedArticle ? (
             /* Full Article Modal / View */
             <div className="card-tech" style={{ padding: '3rem', maxWidth: '840px', margin: '0 auto 4rem', background: 'var(--bg-surface)' }}>
-              <button 
+              <button
                 onClick={() => setSelectedArticle(null)}
                 className="btn btn-secondary btn-sm"
                 style={{ marginBottom: '2rem' }}
@@ -60,12 +60,12 @@ export function Journal() {
             </div>
           ) : (
             /* Article Listing */
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '2rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '2rem' }}>
               {journalArticles.map((art) => (
-                <article 
-                  key={art.slug} 
-                  className="card-tech" 
-                  style={{ padding: '2.5rem', cursor: 'pointer' }}
+                <article
+                  key={art.slug}
+                  className="card-tech"
+                  style={{ cursor: 'pointer' }}
                   onClick={() => setSelectedArticle(art)}
                 >
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem' }}>

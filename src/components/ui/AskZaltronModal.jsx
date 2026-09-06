@@ -40,10 +40,10 @@ export function AskZaltronModal({ isOpen, onClose }) {
   };
 
   return (
-    <div 
-      className="modal-overlay" 
-      onClick={onClose} 
-      role="dialog" 
+    <div
+      className="modal-overlay"
+      onClick={onClose}
+      role="dialog"
       aria-modal="true"
       aria-labelledby="ask-zaltron-title"
     >
@@ -53,8 +53,8 @@ export function AskZaltronModal({ isOpen, onClose }) {
             <MessageSquareText size={18} color="var(--accent-blue)" />
             <h3 id="ask-zaltron-title" style={{ fontSize: '1.15rem' }}>Ask ZALTRON</h3>
           </div>
-          <button 
-            onClick={onClose} 
+          <button
+            onClick={onClose}
             style={{ color: 'var(--text-muted)', background: 'none', border: 'none', padding: '0.25rem' }}
             aria-label="Close dialog"
           >
@@ -68,11 +68,11 @@ export function AskZaltronModal({ isOpen, onClose }) {
           </p>
 
           <form onSubmit={handleSearch} className="modal-search-form">
-            <input 
+            <input
               ref={inputRef}
-              type="text" 
-              className="modal-input" 
-              placeholder="Ask about ZALTRON V1, SLAM, hardware architecture..." 
+              type="text"
+              className="modal-input"
+              placeholder="Ask about ZALTRON V1, SLAM, hardware architecture..."
               value={query}
               onChange={(e) => setQuery(e.target.value)}
             />
@@ -85,8 +85,8 @@ export function AskZaltronModal({ isOpen, onClose }) {
           {/* Quick Prompts */}
           <div className="quick-prompts">
             {verifiedKnowledge.slice(0, 4).map((item, idx) => (
-              <button 
-                key={idx} 
+              <button
+                key={idx}
                 className="quick-prompt-btn"
                 onClick={() => handleSelectPrompt(item.question)}
               >

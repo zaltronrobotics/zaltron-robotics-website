@@ -27,22 +27,22 @@ export function About() {
 
   return (
     <>
-      <Seo 
-        title="About ZALTRON ROBOTICS | Mission, Vision & Engineering Principles" 
+      <Seo
+        title="About ZALTRON ROBOTICS | Mission, Vision & Engineering Principles"
         description="Learn about ZALTRON ROBOTICS: our mission to build intelligent machines for real-world challenges and our engineering principles."
       />
 
       <main className="section-spacing bg-grid-tech">
         <div className="container">
-          <SectionHeader 
+          <SectionHeader
             eyebrow="ABOUT ZALTRON ROBOTICS"
             title="Building Intelligent Machines Grounded in Physical Reality"
             description="ZALTRON ROBOTICS is an emerging robotics and artificial intelligence initiative focused on combining intelligent software with practical physical systems."
           />
 
           {/* Mission & Vision Split */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem', marginBottom: '4rem' }}>
-            <div className="card-tech" style={{ padding: '2.5rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '2rem', marginBottom: '4rem' }}>
+            <div className="card-tech">
               <span className="eyebrow" style={{ fontSize: '0.6875rem' }}>OUR MISSION</span>
               <h3 style={{ fontSize: '1.75rem', marginTop: '0.5rem', marginBottom: '1rem' }}>
                 Machines for Real-World Challenges.
@@ -52,7 +52,7 @@ export function About() {
               </p>
             </div>
 
-            <div className="card-tech" style={{ padding: '2.5rem' }}>
+            <div className="card-tech">
               <span className="eyebrow" style={{ fontSize: '0.6875rem' }}>OUR VISION</span>
               <h3 style={{ fontSize: '1.75rem', marginTop: '0.5rem', marginBottom: '1rem' }}>
                 The Connected Robotics Ecosystem.
@@ -65,15 +65,15 @@ export function About() {
 
           {/* Engineering Principles */}
           <div style={{ marginBottom: '4rem' }}>
-            <SectionHeader 
+            <SectionHeader
               eyebrow="OUR FOUNDATION"
               title="Core Engineering Principles"
               description="How we approach the discipline of building autonomous hardware."
             />
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: '1.5rem' }}>
               {principles.map((p, idx) => (
-                <div key={idx} className="card-tech" style={{ padding: '2rem' }}>
+                <div key={idx} className="card-tech">
                   <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6875rem', color: 'var(--accent-blue)' }}>
                     PRINCIPLE 0{idx + 1}
                   </span>
@@ -85,8 +85,8 @@ export function About() {
           </div>
 
           {/* Long-term Direction & India Origin */}
-          <div className="card-tech" style={{ padding: '3rem', background: 'var(--bg-surface)' }}>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2.5rem', alignItems: 'center' }}>
+          <div className="card-tech" style={{ background: 'var(--bg-surface)' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '2.5rem', alignItems: 'center' }}>
               <div>
                 <span className="eyebrow">GLOBAL AMBITION // ROOTED IN INDIA</span>
                 <h3 style={{ fontSize: '1.85rem', marginTop: '0.5rem', marginBottom: '1rem' }}>

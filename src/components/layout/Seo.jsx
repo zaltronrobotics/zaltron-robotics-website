@@ -2,8 +2,8 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { site } from '../../config/site';
 
-export function Seo({ 
-  title = `${site.companyName} | Robotics, AI & Automation`, 
+export function Seo({
+  title = `${site.companyName} | Robotics, AI & Automation`,
   description = `${site.companyName} develops intelligent robots, AI-driven systems and practical automation for real-world challenges.`,
   type = 'website'
 }) {

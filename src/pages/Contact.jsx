@@ -16,23 +16,23 @@ export function Contact() {
 
   return (
     <>
-      <Seo 
-        title="Contact & Technical Inquiries | ZALTRON ROBOTICS" 
+      <Seo
+        title="Contact & Technical Inquiries | ZALTRON ROBOTICS"
         description="Connect with ZALTRON ROBOTICS for technical inquiries, research collaborations, and engineering discussions."
       />
 
       <main className="section-spacing bg-grid-tech">
         <div className="container">
-          <SectionHeader 
+          <SectionHeader
             eyebrow="COMMUNICATION CHANNELS"
             title="Tell Us What You're Building"
             description="Whether you are an academic researcher, hardware engineer, or automation specialist, we welcome technical inquiries and collaborative dialogue."
           />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '3rem' }}>
             {/* Direct Channels */}
             <div>
-              <div className="card-tech" style={{ padding: '2.5rem', marginBottom: '2rem' }}>
+              <div className="card-tech" style={{ marginBottom: '2rem' }}>
                 <span className="eyebrow">DIRECT TELEMETRY</span>
                 <h3 style={{ fontSize: '1.5rem', marginTop: '0.5rem', marginBottom: '1rem' }}>
                   Primary Email
@@ -40,43 +40,46 @@ export function Contact() {
                 <p style={{ fontSize: '0.9375rem', color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>
                   For direct correspondence, research exchange, or media requests, email our primary inbox:
                 </p>
-                <a 
-                  href={`mailto:${site.email}`} 
-                  style={{ 
-                    display: 'inline-flex', 
-                    alignItems: 'center', 
-                    gap: '0.5rem', 
-                    fontFamily: 'var(--font-mono)', 
-                    fontSize: '1rem', 
+                <a
+                  href={`mailto:${site.email}`}
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: 'clamp(0.78rem, 3.5vw, 0.95rem)',
                     color: 'var(--accent-blue)',
-                    padding: '0.75rem 1.25rem',
+                    padding: '0.65rem 0.85rem',
                     background: 'var(--bg-surface-elevated)',
                     borderRadius: '2px',
-                    border: '1px solid var(--border-muted)'
+                    border: '1px solid var(--border-muted)',
+                    maxWidth: '100%',
+                    overflowWrap: 'anywhere',
+                    wordBreak: 'break-all'
                   }}
                 >
-                  <Mail size={16} />
+                  <Mail size={16} style={{ flexShrink: 0 }} />
                   <span>{site.email}</span>
                 </a>
               </div>
 
               {/* Verified Networks */}
-              <div className="card-tech" style={{ padding: '2.5rem' }}>
+              <div className="card-tech">
                 <span className="eyebrow">VERIFIED REPOSITORIES & NETWORKS</span>
                 <h3 style={{ fontSize: '1.35rem', marginTop: '0.5rem', marginBottom: '1.25rem' }}>
                   Official Channels
                 </h3>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', fontFamily: 'var(--font-mono)', fontSize: '0.8125rem' }}>
                   {Object.entries(site.social).map(([name, url]) => (
-                    <a 
+                    <a
                       key={name}
-                      href={url} 
-                      target="_blank" 
+                      href={url}
+                      target="_blank"
                       rel="noopener noreferrer"
-                      style={{ 
-                        display: 'flex', 
-                        justifyContent: 'space-between', 
-                        alignItems: 'center', 
+                      style={{
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
                         padding: '0.65rem 0.85rem',
                         background: 'var(--bg-surface-elevated)',
                         borderRadius: '2px',
@@ -93,7 +96,7 @@ export function Contact() {
             </div>
 
             {/* Technical Inquiry Form */}
-            <div className="card-tech" style={{ padding: '2.5rem', background: 'var(--bg-surface)' }}>
+            <div className="card-tech" style={{ background: 'var(--bg-surface)' }}>
               <span className="eyebrow">STRUCTURED INQUIRY</span>
               <h3 style={{ fontSize: '1.5rem', marginTop: '0.5rem', marginBottom: '1.5rem' }}>
                 Send a Message
@@ -116,9 +119,9 @@ export function Contact() {
                     <label style={{ display: 'block', fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--text-muted)', marginBottom: '0.4rem', textTransform: 'uppercase' }}>
                       Name *
                     </label>
-                    <input 
-                      required 
-                      className="modal-input" 
+                    <input
+                      required
+                      className="modal-input"
                       style={{ width: '100%' }}
                       placeholder="Your Name"
                       value={form.name}
@@ -130,10 +133,10 @@ export function Contact() {
                     <label style={{ display: 'block', fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--text-muted)', marginBottom: '0.4rem', textTransform: 'uppercase' }}>
                       Email *
                     </label>
-                    <input 
-                      required 
+                    <input
+                      required
                       type="email"
-                      className="modal-input" 
+                      className="modal-input"
                       style={{ width: '100%' }}
                       placeholder="name@domain.com"
                       value={form.email}
@@ -145,8 +148,8 @@ export function Contact() {
                     <label style={{ display: 'block', fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--text-muted)', marginBottom: '0.4rem', textTransform: 'uppercase' }}>
                       Organization / Affiliation (Optional)
                     </label>
-                    <input 
-                      className="modal-input" 
+                    <input
+                      className="modal-input"
                       style={{ width: '100%' }}
                       placeholder="Lab, University, or Company"
                       value={form.organization}
@@ -158,7 +161,7 @@ export function Contact() {
                     <label style={{ display: 'block', fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--text-muted)', marginBottom: '0.4rem', textTransform: 'uppercase' }}>
                       Project / Focus Area
                     </label>
-                    <select 
+                    <select
                       className="modal-input"
                       style={{ width: '100%', background: 'var(--bg-surface-elevated)', color: 'var(--text-primary)' }}
                       value={form.area}
@@ -177,10 +180,10 @@ export function Contact() {
                     <label style={{ display: 'block', fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--text-muted)', marginBottom: '0.4rem', textTransform: 'uppercase' }}>
                       Message *
                     </label>
-                    <textarea 
-                      required 
+                    <textarea
+                      required
                       rows={5}
-                      className="modal-input" 
+                      className="modal-input"
                       style={{ width: '100%' }}
                       placeholder="Describe your inquiry, project scope, or technical questions..."
                       value={form.message}

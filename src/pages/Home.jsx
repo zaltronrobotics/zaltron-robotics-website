@@ -22,7 +22,7 @@ export function Home() {
 
   return (
     <>
-      <Seo 
+      <Seo
         title={`${site.companyName} | Robotics, AI & Automation`}
         description="ZALTRON ROBOTICS develops intelligent robots, autonomous systems and AI-driven machines designed to solve real-world problems."
       />
@@ -82,7 +82,7 @@ export function Home() {
             ================================================================= */}
         <section className="section-spacing" style={{ borderTop: '1px solid var(--border-subtle)', background: 'var(--bg-surface)' }}>
           <div className="container">
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3rem', alignItems: 'center' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '3rem', alignItems: 'center' }}>
               <div>
                 <span className="eyebrow">THE ZALTRON PHILOSOPHY</span>
                 <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)', marginTop: '0.5rem', marginBottom: '1rem' }}>
@@ -127,10 +127,10 @@ export function Home() {
             ================================================================= */}
         <section className="section-spacing bg-radial-glow">
           <div className="container">
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '3.5rem', alignItems: 'center' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '3.5rem', alignItems: 'center' }}>
               <div>
                 <span className="eyebrow">FLAGSHIP PLATFORM // Z-01</span>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginTop: '0.5rem', marginBottom: '1rem' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap', marginTop: '0.5rem', marginBottom: '1rem' }}>
                   <h2 style={{ fontSize: 'clamp(2.5rem, 4.5vw, 3.75rem)' }}>ZALTRON V1</h2>
                   <StatusBadge status={flagship.status} />
                 </div>
@@ -141,7 +141,7 @@ export function Home() {
                   ZALTRON V1 serves as the testing ground for our core technologies: differential mobile locomotion, ultrasonic arc sweeping, optical vision streaming, and low-latency Wi-Fi telemetry to external neural compute hosts.
                 </p>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', marginBottom: '2.5rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: '0.75rem', marginBottom: '2.5rem' }}>
                   {flagship.capabilities.slice(0, 6).map((cap, i) => (
                     <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--text-secondary)' }}>
                       <span style={{ color: 'var(--accent-blue)' }}>0{i+1}</span>
@@ -150,7 +150,7 @@ export function Home() {
                   ))}
                 </div>
 
-                <div style={{ display: 'flex', gap: '1rem' }}>
+                <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                   <Button to="/robots/zaltron-v1" variant="primary">
                     Deep Dive ZALTRON V1
                   </Button>
@@ -192,7 +192,7 @@ export function Home() {
             ================================================================= */}
         <section className="section-spacing" style={{ borderTop: '1px solid var(--border-subtle)', background: 'var(--bg-base)' }}>
           <div className="container">
-            <SectionHeader 
+            <SectionHeader
               eyebrow="THE ZALTRON NETWORK"
               title="One Intelligent Ecosystem. Specialized Machines."
               description="Rather than forcing a single machine to perform every contradictory task, ZALTRON is designed as a family of specialized robots operating as nodes in a unified coordination network."
@@ -223,7 +223,7 @@ export function Home() {
             ================================================================= */}
         <section className="section-spacing" style={{ borderTop: '1px solid var(--border-subtle)', background: 'var(--bg-base)' }}>
           <div className="container">
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3rem', alignItems: 'center' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '3rem', alignItems: 'center' }}>
               <div>
                 <span className="eyebrow">R&D DIRECTION // AUTONOMOUS SLAM</span>
                 <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)', marginTop: '0.5rem', marginBottom: '1rem' }}>
@@ -262,7 +262,7 @@ export function Home() {
             ================================================================= */}
         <section className="section-spacing" style={{ borderTop: '1px solid var(--border-subtle)', background: 'var(--bg-surface)' }}>
           <div className="container">
-            <SectionHeader 
+            <SectionHeader
               eyebrow="TECHNICAL LIFECYCLE"
               title="The Sense-Understand-Plan-Act-Learn Pipeline"
               description="A systematic architectural flow turning raw physical inputs into calibrated motor execution and continuous simulation refinement."
@@ -336,7 +336,7 @@ export function Home() {
             ================================================================= */}
         <section className="section-spacing" style={{ borderTop: '1px solid var(--border-subtle)', background: 'var(--bg-surface)' }}>
           <div className="container">
-            <SectionHeader 
+            <SectionHeader
               eyebrow="DEVELOPMENT HORIZON"
               title="From Foundation to Coordinated Fleet"
               description="Our transparent engineering trajectory across current validation, upcoming autonomy integration, and future ecosystem expansion."
@@ -397,7 +397,7 @@ export function Home() {
               </Button>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.5rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '1.5rem' }}>
               {journalArticles.map((art) => (
                 <Link key={art.slug} to="/journal" className="card-tech">
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.85rem' }}>
@@ -440,10 +440,10 @@ export function Home() {
               <Button to="/robots/zaltron-v1" variant="primary" size="lg">
                 Explore ZALTRON V1
               </Button>
-              <a 
-                href={site.social.GitHub} 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href={site.social.GitHub}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn btn-secondary btn-lg"
               >
                 Follow on GitHub

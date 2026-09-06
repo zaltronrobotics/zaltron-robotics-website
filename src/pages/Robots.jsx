@@ -7,20 +7,20 @@ import { RobotCard } from '../components/cards/RobotCard';
 export function Robots() {
   const [filter, setFilter] = useState('ALL');
 
-  const filteredRobots = filter === 'ALL' 
-    ? robots 
+  const filteredRobots = filter === 'ALL'
+    ? robots
     : robots.filter(r => r.statusCategory === filter.toLowerCase() || (filter === 'ACTIVE' && r.statusCategory === 'active'));
 
   return (
     <>
-      <Seo 
-        title="Robots Ecosystem | ZALTRON ROBOTICS" 
+      <Seo
+        title="Robots Ecosystem | ZALTRON ROBOTICS"
         description="Explore the full family of specialized intelligent machines in the ZALTRON robotics ecosystem."
       />
 
       <main className="section-spacing bg-grid-tech">
         <div className="container">
-          <SectionHeader 
+          <SectionHeader
             eyebrow="THE ZALTRON ECOSYSTEM"
             title="Specialized Machines. One Coordinated Family."
             description="From our flagship command platform to agile reconnaissance rovers, dexterous arms, and central network orchestration—explore every system being researched and architected at ZALTRON ROBOTICS."
@@ -39,8 +39,8 @@ export function Robots() {
             ))}
           </div>
 
-          {/* 3-Column / 2-Column Responsive Grid */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))', gap: '1.75rem' }}>
+          {/* Responsive Robot Grid */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: '1.75rem' }}>
             {filteredRobots.map((robot, idx) => (
               <RobotCard key={robot.slug} robot={robot} index={idx} />
             ))}

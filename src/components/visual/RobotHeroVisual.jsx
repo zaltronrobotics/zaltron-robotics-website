@@ -12,11 +12,11 @@ export function RobotHeroVisual({ mini = false, className = '' }) {
       {/* Responsive Scalable SVG Robot */}
       <div className="robot-svg-wrapper">
         <div className="scan-beam" aria-hidden="true" />
-        
-        <svg 
-          className="robot-svg" 
-          viewBox="0 0 400 480" 
-          fill="none" 
+
+        <svg
+          className="robot-svg"
+          viewBox="0 0 400 480"
+          fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
           {/* Subtle Ambient Radial Backlight */}
@@ -34,7 +34,7 @@ export function RobotHeroVisual({ mini = false, className = '' }) {
           {/* Head Unit */}
           <rect x="110" y="85" width="180" height="96" rx="28" fill="#0c131d" stroke="#334155" strokeWidth="2.5" />
           <path d="M125 105 H275" stroke="#1e293b" strokeWidth="1.5" />
-          
+
           {/* Optical Sensor Eyes (Dual Camera Perception) */}
           <g transform="translate(140, 118)">
             <circle cx="18" cy="18" r="18" fill="#05070a" stroke="#0099ff" strokeWidth="2" />
@@ -55,18 +55,18 @@ export function RobotHeroVisual({ mini = false, className = '' }) {
           <circle cx="225" cy="162" r="3" fill="#38bdf8" />
 
           {/* Main Chassis / Faceted Body */}
-          <polygon 
-            points="120,200 280,200 310,340 90,340" 
-            fill="#0f1722" 
-            stroke="#334155" 
-            strokeWidth="2.5" 
+          <polygon
+            points="120,200 280,200 310,340 90,340"
+            fill="#0f1722"
+            stroke="#334155"
+            strokeWidth="2.5"
           />
           {/* Internal Panel Layer */}
-          <polygon 
-            points="135,215 265,215 290,325 110,325" 
-            fill="#090e15" 
-            stroke="#1e293b" 
-            strokeWidth="1.5" 
+          <polygon
+            points="135,215 265,215 290,325 110,325"
+            fill="#090e15"
+            stroke="#1e293b"
+            strokeWidth="1.5"
           />
 
           {/* Core Brand Badge Display */}

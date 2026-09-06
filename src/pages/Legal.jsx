@@ -8,14 +8,14 @@ export function Legal({ type = 'privacy' }) {
 
   return (
     <>
-      <Seo 
+      <Seo
         title={`${isTerms ? 'Terms of Use' : 'Privacy Notice'} | ZALTRON ROBOTICS`}
         description={`Official ${isTerms ? 'Terms of Use' : 'Privacy Notice'} for ZALTRON ROBOTICS.`}
       />
 
       <main className="section-spacing bg-grid-tech">
         <div className="container" style={{ maxWidth: '820px' }}>
-          <SectionHeader 
+          <SectionHeader
             eyebrow="LEGAL NOTICE // POLICY"
             title={isTerms ? 'Terms of Use' : 'Privacy Notice'}
             description={`Last updated: August 2026. Official governance guidelines for ${site.companyName}.`}

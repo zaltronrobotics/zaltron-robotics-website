@@ -28,15 +28,15 @@ export function MobileMenu({ isOpen, onClose, onOpenAsk }) {
   if (!isOpen) return null;
 
   return (
-    <div 
-      className="modal-overlay" 
-      role="dialog" 
-      aria-modal="true" 
+    <div
+      className="modal-overlay"
+      role="dialog"
+      aria-modal="true"
       aria-label="Mobile Navigation"
       onClick={onClose}
     >
-      <div 
-        ref={drawerRef} 
+      <div
+        ref={drawerRef}
         className="mobile-drawer"
         onClick={(e) => e.stopPropagation()}
         style={{
@@ -60,9 +60,9 @@ export function MobileMenu({ isOpen, onClose, onOpenAsk }) {
             <img src={site.logoUrl} alt="Logo" width="32" height="32" />
             <span className="nav-brand-name">{site.brandName}</span>
           </div>
-          <button 
-            onClick={onClose} 
-            aria-label="Close menu" 
+          <button
+            onClick={onClose}
+            aria-label="Close menu"
             style={{ padding: '0.5rem', color: 'var(--text-primary)', background: 'none', border: 'none' }}
           >
             <X size={24} />
@@ -70,8 +70,8 @@ export function MobileMenu({ isOpen, onClose, onOpenAsk }) {
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '2rem' }}>
-          <NavLink 
-            to="/" 
+          <NavLink
+            to="/"
             onClick={onClose}
             style={({ isActive }) => ({
               padding: '0.75rem 0',
@@ -88,8 +88,8 @@ export function MobileMenu({ isOpen, onClose, onOpenAsk }) {
             <ChevronRight size={16} />
           </NavLink>
 
-          <NavLink 
-            to="/robots" 
+          <NavLink
+            to="/robots"
             onClick={onClose}
             style={({ isActive }) => ({
               padding: '0.75rem 0',
@@ -106,8 +106,8 @@ export function MobileMenu({ isOpen, onClose, onOpenAsk }) {
             <ChevronRight size={16} />
           </NavLink>
 
-          <NavLink 
-            to="/technology" 
+          <NavLink
+            to="/technology"
             onClick={onClose}
             style={({ isActive }) => ({
               padding: '0.75rem 0',
@@ -124,8 +124,8 @@ export function MobileMenu({ isOpen, onClose, onOpenAsk }) {
             <ChevronRight size={16} />
           </NavLink>
 
-          <NavLink 
-            to="/solutions" 
+          <NavLink
+            to="/solutions"
             onClick={onClose}
             style={({ isActive }) => ({
               padding: '0.75rem 0',
@@ -142,8 +142,8 @@ export function MobileMenu({ isOpen, onClose, onOpenAsk }) {
             <ChevronRight size={16} />
           </NavLink>
 
-          <NavLink 
-            to="/research" 
+          <NavLink
+            to="/research"
             onClick={onClose}
             style={({ isActive }) => ({
               padding: '0.75rem 0',
@@ -160,8 +160,8 @@ export function MobileMenu({ isOpen, onClose, onOpenAsk }) {
             <ChevronRight size={16} />
           </NavLink>
 
-          <NavLink 
-            to="/roadmap" 
+          <NavLink
+            to="/roadmap"
             onClick={onClose}
             style={({ isActive }) => ({
               padding: '0.75rem 0',
@@ -178,8 +178,8 @@ export function MobileMenu({ isOpen, onClose, onOpenAsk }) {
             <ChevronRight size={16} />
           </NavLink>
 
-          <NavLink 
-            to="/about" 
+          <NavLink
+            to="/about"
             onClick={onClose}
             style={({ isActive }) => ({
               padding: '0.75rem 0',
@@ -196,8 +196,8 @@ export function MobileMenu({ isOpen, onClose, onOpenAsk }) {
             <ChevronRight size={16} />
           </NavLink>
 
-          <NavLink 
-            to="/careers" 
+          <NavLink
+            to="/careers"
             onClick={onClose}
             style={({ isActive }) => ({
               padding: '0.75rem 0',
@@ -214,8 +214,8 @@ export function MobileMenu({ isOpen, onClose, onOpenAsk }) {
             <ChevronRight size={16} />
           </NavLink>
 
-          <NavLink 
-            to="/journal" 
+          <NavLink
+            to="/journal"
             onClick={onClose}
             style={({ isActive }) => ({
               padding: '0.75rem 0',
@@ -232,8 +232,8 @@ export function MobileMenu({ isOpen, onClose, onOpenAsk }) {
             <ChevronRight size={16} />
           </NavLink>
 
-          <NavLink 
-            to="/contact" 
+          <NavLink
+            to="/contact"
             onClick={onClose}
             style={({ isActive }) => ({
               padding: '0.75rem 0',
@@ -278,29 +278,29 @@ export function MobileMenu({ isOpen, onClose, onOpenAsk }) {
 
         {/* Actions */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginTop: 'auto' }}>
-          <button 
-            onClick={() => { onClose(); onOpenAsk(); }} 
-            className="btn btn-secondary" 
+          <button
+            onClick={() => { onClose(); onOpenAsk(); }}
+            className="btn btn-secondary"
             style={{ width: '100%' }}
           >
             <MessageSquareText size={16} />
             <span>Ask ZALTRON</span>
           </button>
-          
-          <Button 
-            to="/robots/zaltron-v1" 
-            onClick={onClose} 
-            variant="primary" 
+
+          <Button
+            to="/robots/zaltron-v1"
+            onClick={onClose}
+            variant="primary"
             style={{ width: '100%' }}
           >
             Explore Flagship V1
           </Button>
 
-          <a 
-            href={site.social.GitHub} 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="btn btn-secondary" 
+          <a
+            href={site.social.GitHub}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-secondary"
             style={{ width: '100%' }}
           >
             <span>Visit GitHub</span>

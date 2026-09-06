@@ -6,6 +6,7 @@ import { Seo } from '../components/layout/Seo';
 import { SectionHeader } from '../components/ui/SectionHeader';
 import { Button } from '../components/ui/Button';
 import { StatusBadge } from '../components/ui/StatusBadge';
+import { RobotSchematicVisual } from '../components/visual/RobotSchematicVisual';
 import { ZaltronV1 } from './ZaltronV1';
 
 export function RobotDetail() {
@@ -28,25 +29,25 @@ export function RobotDetail() {
 
   return (
     <>
-      <Seo 
+      <Seo
         title={`${robot.name} | ${robot.role} | ZALTRON ROBOTICS`}
         description={robot.description}
       />
 
       <main>
-        {/* Header Section */}
+        {/* Header Section with Technical Schematic Visual */}
         <section className="hero-section bg-grid-tech bg-radial-glow" style={{ minHeight: 'auto', paddingBottom: '3.5rem' }}>
           <div className="container">
             <div style={{ marginBottom: '1.5rem' }}>
-              <Link 
-                to="/robots" 
-                style={{ 
-                  display: 'inline-flex', 
-                  alignItems: 'center', 
-                  gap: '0.5rem', 
-                  fontFamily: 'var(--font-mono)', 
-                  fontSize: '0.75rem', 
-                  color: 'var(--text-muted)' 
+              <Link
+                to="/robots"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  fontFamily: 'var(--font-mono)',
+                  fontSize: '0.75rem',
+                  color: 'var(--text-muted)'
                 }}
               >
                 <ArrowLeft size={14} />
@@ -54,30 +55,39 @@ export function RobotDetail() {
               </Link>
             </div>
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.5rem' }}>
-              <span className="eyebrow">{robot.code} // {robot.role}</span>
-              <StatusBadge status={robot.status} />
-            </div>
+            <div className="hero-grid" style={{ alignItems: 'center' }}>
+              <div className="hero-content">
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.5rem' }}>
+                  <span className="eyebrow">{robot.code} // {robot.role}</span>
+                  <StatusBadge status={robot.status} />
+                </div>
 
-            <h1 style={{ fontSize: 'clamp(2.75rem, 5.5vw, 4.5rem)', marginBottom: '0.75rem' }}>
-              {robot.name}
-            </h1>
+                <h1 style={{ fontSize: 'clamp(2.4rem, 5vw, 4.25rem)', marginBottom: '0.75rem', overflowWrap: 'break-word' }}>
+                  {robot.name}
+                </h1>
 
-            <p style={{ fontSize: '1.35rem', color: 'var(--accent-blue)', fontFamily: 'var(--font-mono)', marginBottom: '1.5rem' }}>
-              {robot.tagline}
-            </p>
+                <p style={{ fontSize: '1.2rem', color: 'var(--accent-blue)', fontFamily: 'var(--font-mono)', marginBottom: '1.25rem' }}>
+                  {robot.tagline}
+                </p>
 
-            <p className="hero-lead" style={{ maxWidth: '780px' }}>
-              {robot.description}
-            </p>
+                <p className="hero-lead">
+                  {robot.description}
+                </p>
 
-            <div className="hero-actions">
-              <Button to="/contact" variant="primary">
-                Inquire About {robot.name}
-              </Button>
-              <Button to="/robots/zaltron-v1" variant="secondary">
-                View Flagship ZALTRON V1
-              </Button>
+                <div className="hero-actions">
+                  <Button to="/contact" variant="primary">
+                    Inquire About {robot.name}
+                  </Button>
+                  <Button to="/robots/zaltron-v1" variant="secondary">
+                    View Flagship ZALTRON V1
+                  </Button>
+                </div>
+              </div>
+
+              {/* Technical Schematic Focal Point */}
+              <div className="hero-visual-wrapper">
+                <RobotSchematicVisual robot={robot} />
+              </div>
             </div>
           </div>
         </section>
@@ -85,10 +95,10 @@ export function RobotDetail() {
         {/* Intended Capabilities & Specs */}
         <section className="section-spacing" style={{ borderTop: '1px solid var(--border-subtle)', background: 'var(--bg-surface)' }}>
           <div className="container">
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '3rem' }}>
               {/* Capabilities */}
               <div>
-                <SectionHeader 
+                <SectionHeader
                   eyebrow="R&D DIRECTION"
                   title="Intended Capabilities"
                   description="Core functional characteristics and conceptual hardware architecture being explored for this platform."
@@ -96,10 +106,10 @@ export function RobotDetail() {
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                   {robot.capabilities.map((cap, i) => (
-                    <div 
-                      key={i} 
-                      className="card-tech" 
-                      style={{ padding: '1.25rem 1.5rem', display: 'flex', alignItems: 'center', gap: '1rem' }}
+                    <div
+                      key={i}
+                      className="card-tech"
+                      style={{ padding: '1rem 1.25rem', display: 'flex', alignItems: 'center', gap: '1rem' }}
                     >
                       <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--accent-blue)', fontSize: '0.8125rem' }}>0{i+1}</span>
                       <span style={{ fontSize: '0.9375rem', fontWeight: 500 }}>{cap}</span>
@@ -110,13 +120,13 @@ export function RobotDetail() {
 
               {/* Honest Concept Specifications */}
               <div>
-                <SectionHeader 
+                <SectionHeader
                   eyebrow="TECHNICAL ATTRIBUTES"
                   title="Architectural Specifications"
                   description="System class and target engineering parameters under design study."
                 />
 
-                <div className="card-tech" style={{ padding: '2rem' }}>
+                <div className="card-tech">
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
                     {robot.specsHonest.map((spec, i) => (
                       <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '0.75rem' }}>
@@ -144,15 +154,15 @@ export function RobotDetail() {
         {/* Potential Use Cases & Ecosystem Integration */}
         <section className="section-spacing" style={{ borderTop: '1px solid var(--border-subtle)', background: 'var(--bg-base)' }}>
           <div className="container">
-            <SectionHeader 
+            <SectionHeader
               eyebrow="APPLICATION DOMAINS"
               title={`Target Applications for ${robot.name}`}
               description="Where this specialized robotic platform is envisioned to create meaningful real-world utility."
             />
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', marginBottom: '3.5rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: '1.5rem', marginBottom: '3.5rem' }}>
               {robot.useCases.map((uc, i) => (
-                <div key={i} className="card-tech" style={{ padding: '1.75rem' }}>
+                <div key={i} className="card-tech">
                   <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6875rem', color: 'var(--accent-blue)' }}>APPLICATION 0{i+1}</span>
                   <h4 style={{ fontSize: '1.15rem', marginTop: '0.5rem', marginBottom: '0.5rem' }}>{uc}</h4>
                   <p style={{ fontSize: '0.8125rem', color: 'var(--text-muted)' }}>
@@ -164,16 +174,16 @@ export function RobotDetail() {
 
             {/* Next / Prev Navigation */}
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '2rem', borderTop: '1px solid var(--border-subtle)', flexWrap: 'wrap', gap: '1rem' }}>
-              <Link 
-                to={`/robots/${prevRobot.slug}`} 
+              <Link
+                to={`/robots/${prevRobot.slug}`}
                 style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', fontFamily: 'var(--font-mono)', fontSize: '0.8125rem', color: 'var(--text-secondary)' }}
               >
                 <ArrowLeft size={16} />
                 <span>PREVIOUS: {prevRobot.name}</span>
               </Link>
 
-              <Link 
-                to={`/robots/${nextRobot.slug}`} 
+              <Link
+                to={`/robots/${nextRobot.slug}`}
                 style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', fontFamily: 'var(--font-mono)', fontSize: '0.8125rem', color: 'var(--accent-blue)' }}
               >
                 <span>NEXT: {nextRobot.name}</span>

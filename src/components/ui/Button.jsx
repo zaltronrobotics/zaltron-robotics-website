@@ -2,19 +2,19 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
-export function Button({ 
-  to, 
-  href, 
-  onClick, 
-  variant = 'primary', 
-  size = 'md', 
-  children, 
-  icon = true, 
-  className = '', 
-  ...props 
+export function Button({
+  to,
+  href,
+  onClick,
+  variant = 'primary',
+  size = 'md',
+  children,
+  icon = true,
+  className = '',
+  ...props
 }) {
   const classes = `btn btn-${variant} ${size === 'sm' ? 'btn-sm' : size === 'lg' ? 'btn-lg' : ''} ${className}`;
-  
+
   const content = (
     <>
       <span>{children}</span>

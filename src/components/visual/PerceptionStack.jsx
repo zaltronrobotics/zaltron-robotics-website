@@ -30,13 +30,13 @@ export function PerceptionStack() {
           {inputs.map((item, idx) => {
             const Icon = item.icon;
             return (
-              <div 
-                key={idx} 
-                style={{ 
-                  background: 'var(--bg-surface-elevated)', 
-                  border: '1px solid var(--border-muted)', 
-                  padding: '1.25rem', 
-                  borderRadius: '2px' 
+              <div
+                key={idx}
+                style={{
+                  background: 'var(--bg-surface-elevated)',
+                  border: '1px solid var(--border-muted)',
+                  padding: '1.25rem',
+                  borderRadius: '2px'
                 }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>

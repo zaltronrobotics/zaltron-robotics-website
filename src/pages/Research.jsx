@@ -8,23 +8,23 @@ import { Sparkles, FlaskConical, AlertCircle, FileText } from 'lucide-react';
 export function Research() {
   return (
     <>
-      <Seo 
-        title="Research & Experiments | ZALTRON ROBOTICS" 
+      <Seo
+        title="Research & Experiments | ZALTRON ROBOTICS"
         description="Active research directions in Physical AI, SLAM odometry, Human-Robot Interaction, and heterogeneous fleet coordination."
       />
 
       <main className="section-spacing bg-grid-tech">
         <div className="container">
-          <SectionHeader 
+          <SectionHeader
             eyebrow="LABS & EXPERIMENTS"
             title="Scientific Inquiry in the Physical World"
             description="Our research prioritizes empirical verification over speculative hype. Explore our active research questions, hardware testbeds, and experimental hypotheses."
           />
 
           {/* Research Cards */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '2rem', marginBottom: '4rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '2rem', marginBottom: '4rem' }}>
             {researchAreas.map((area) => (
-              <div key={area.id} className="card-tech" style={{ padding: '2rem' }}>
+              <div key={area.id} className="card-tech">
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
                   <span className="eyebrow" style={{ fontSize: '0.625rem' }}>{area.eyebrow}</span>
                   <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6875rem', color: 'var(--accent-blue)', background: 'var(--accent-blue-light)', padding: '0.25rem 0.6rem', borderRadius: '2px' }}>
@@ -63,13 +63,13 @@ export function Research() {
           </div>
 
           {/* Elegant State: Peer-Reviewed Publications & Lab Notes */}
-          <div className="card-tech" style={{ padding: '3rem', textAlign: 'center', maxWidth: '780px', margin: '0 auto', background: 'var(--bg-surface)' }}>
+          <div className="card-tech" style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto', background: 'var(--bg-surface)' }}>
             <FlaskConical size={32} color="var(--accent-blue)" style={{ margin: '0 auto 1rem' }} />
             <h3 style={{ fontSize: '1.5rem', marginBottom: '0.75rem' }}>Research Archive Is Taking Shape</h3>
             <p style={{ fontSize: '0.9375rem', color: 'var(--text-secondary)', maxWidth: '580px', margin: '0 auto 1.5rem' }}>
               We do not publish fabricated papers or claim false peer review. As our empirical testbed experiments on ZALTRON V1 and Scout conclude, technical whitepapers and open datasets will be released directly through our GitHub repository.
             </p>
-            <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem' }}>
+            <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
               <Button href="https://github.com/zaltronrobotics" variant="secondary">
                 Follow Technical Repositories
               </Button>

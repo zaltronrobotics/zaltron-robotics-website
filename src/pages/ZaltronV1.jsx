@@ -18,7 +18,7 @@ export function ZaltronV1() {
 
   return (
     <>
-      <Seo 
+      <Seo
         title="ZALTRON V1 | The Flagship Intelligent Machine"
         description="Explore the architecture, perception stack, dual-tier intelligence, and development status of ZALTRON V1, the flagship platform in the ZALTRON ecosystem."
       />
@@ -65,15 +65,15 @@ export function ZaltronV1() {
             ================================================================= */}
         <section id="intelligence" className="section-spacing" style={{ borderTop: '1px solid var(--border-subtle)', background: 'var(--bg-surface)' }}>
           <div className="container">
-            <SectionHeader 
+            <SectionHeader
               eyebrow="COMPUTATIONAL ARCHITECTURE"
               title="Dual-Tier Intelligence: Edge AI + RTOS Microcontroller"
               description="To reconcile heavy neural perception with microsecond-deterministic motor safety, ZALTRON V1 distributes computation between an Edge Host and an ESP32 microcontroller."
             />
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '2rem' }}>
               {/* High-Level Tier */}
-              <div className="card-tech" style={{ padding: '2rem' }}>
+              <div className="card-tech">
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
                   <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6875rem', color: 'var(--accent-blue)' }}>TIER 01 // HIGH-LEVEL AI</span>
                   <Cpu size={18} color="var(--accent-blue)" />
@@ -143,7 +143,7 @@ export function ZaltronV1() {
             ================================================================= */}
         <section className="section-spacing" style={{ borderTop: '1px solid var(--border-subtle)', background: 'var(--bg-surface)' }}>
           <div className="container">
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3rem', alignItems: 'center' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '3rem', alignItems: 'center' }}>
               <div>
                 <span className="eyebrow">HUMAN-ROBOT INTERACTION // SPEECH</span>
                 <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)', marginTop: '0.5rem', marginBottom: '1rem' }}>
@@ -152,7 +152,7 @@ export function ZaltronV1() {
                 <p style={{ marginBottom: '1.25rem' }}>
                   ZALTRON V1 investigates intuitive speech interaction for hands-free collaborative control. Acoustic feeds are parsed locally to extract high-level directional directives and status queries.
                 </p>
-                
+
                 <div style={{ padding: '1.25rem', background: 'var(--bg-surface-elevated)', borderRadius: '4px', borderLeft: '3px solid var(--accent-blue)', marginBottom: '1.5rem' }}>
                   <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6875rem', color: 'var(--accent-blue)' }}>
                     EXPERIMENTAL WAKE PHRASE NOTE
@@ -164,7 +164,7 @@ export function ZaltronV1() {
               </div>
 
               {/* Acoustic Waveform & Command Visualizer */}
-              <div className="card-tech" style={{ padding: '2rem' }}>
+              <div className="card-tech">
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
                   <span className="eyebrow">VOCAL TELEMETRY INTERFACE</span>
                   <Mic size={18} color="var(--accent-blue)" />
@@ -173,15 +173,16 @@ export function ZaltronV1() {
                 {/* Simulated Audio Waveform */}
                 <div style={{ height: '70px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '4px', padding: '1rem', background: '#04070b', borderRadius: '2px', marginBottom: '1.5rem' }}>
                   {[24, 45, 18, 60, 85, 30, 92, 40, 75, 55, 30, 80, 95, 60, 40, 25, 70, 50, 30, 20].map((h, i) => (
-                    <div 
-                      key={i} 
-                      style={{ 
-                        flex: 1, 
-                        height: `${h}%`, 
-                        background: 'var(--accent-blue)', 
+                    <div
+                      key={i}
+                      className="waveform-bar"
+                      style={{
+                        flex: 1,
+                        height: `${h}%`,
+                        background: 'var(--accent-blue)',
                         borderRadius: '1px',
-                        opacity: 0.75
-                      }} 
+                        animationDelay: `${i * 0.08}s`
+                      }}
                     />
                   ))}
                 </div>
@@ -219,7 +220,7 @@ export function ZaltronV1() {
             ================================================================= */}
         <section id="exploration" className="section-spacing" style={{ borderTop: '1px solid var(--border-subtle)', background: 'var(--bg-surface)' }}>
           <div className="container">
-            <SectionHeader 
+            <SectionHeader
               eyebrow="AUTONOMOUS NAVIGATION"
               title="Exploration Mode: Dynamic SLAM & Occupancy Mapping"
               description="A live interactive visualization demonstrating how ZALTRON V1 builds 2D spatial maps of unfamiliar environments using radial raycasting and obstacle detection."
@@ -243,13 +244,13 @@ export function ZaltronV1() {
             ================================================================= */}
         <section className="section-spacing" style={{ borderTop: '1px solid var(--border-subtle)', background: 'var(--bg-surface)' }}>
           <div className="container">
-            <SectionHeader 
+            <SectionHeader
               eyebrow="TRANSPARENT STATUS"
               title="Current Milestone: Prototype Bench Testing"
               description="ZALTRON ROBOTICS prioritizes engineering veracity over marketing claims. Here is our exact development progress."
             />
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.5rem', marginBottom: '3rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))', gap: '1.5rem', marginBottom: '3rem' }}>
               <div className="card-tech" style={{ padding: '1.5rem' }}>
                 <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6875rem', color: 'var(--text-muted)' }}>STAGE 01</span>
                 <h4 style={{ fontSize: '1.1rem', marginTop: '0.4rem', color: 'var(--accent-blue)' }}>Concept Design</h4>
@@ -304,10 +305,10 @@ export function ZaltronV1() {
               <Button to="/robots" variant="primary" size="lg">
                 Explore the Robot Ecosystem
               </Button>
-              <a 
-                href={site.social.GitHub} 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href={site.social.GitHub}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn btn-secondary btn-lg"
               >
                 Inspect Code on GitHub

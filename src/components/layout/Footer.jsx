@@ -11,12 +11,12 @@ export function Footer() {
           {/* Brand Col */}
           <div className="footer-brand">
             <Link to="/" className="nav-brand" aria-label="ZALTRON ROBOTICS Home">
-              <img 
-                src={site.logoUrl} 
-                alt="ZALTRON ROBOTICS official logo" 
-                className="nav-logo-img" 
-                width="36" 
-                height="36" 
+              <img
+                src={site.logoUrl}
+                alt="ZALTRON ROBOTICS official logo"
+                className="nav-logo-img"
+                width="36"
+                height="36"
               />
               <div className="nav-brand-text">
                 <span className="nav-brand-name">{site.brandName}</span>
@@ -86,7 +86,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="footer-bottom">
           <div>
-            © 2026 {site.companyName}. All rights reserved. 
+            © 2026 {site.companyName}. All rights reserved.
             <span style={{ marginLeft: '1rem', color: 'var(--accent-blue)' }}>ORIGIN: INDIA</span>
           </div>
           <div className="footer-bottom-links">

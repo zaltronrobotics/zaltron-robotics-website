@@ -27,7 +27,7 @@ export function MemoryToggle() {
           </span>
         </div>
 
-        <div 
+        <div
           className={`memory-toggle-switch ${memoryOptIn ? 'active' : ''}`}
           onClick={() => setMemoryOptIn(!memoryOptIn)}
           role="switch"

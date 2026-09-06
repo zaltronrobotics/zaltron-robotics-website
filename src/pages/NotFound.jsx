@@ -7,8 +7,8 @@ import { AlertTriangle } from 'lucide-react';
 export function NotFound() {
   return (
     <>
-      <Seo 
-        title="404 // Coordinate Not Found | ZALTRON ROBOTICS" 
+      <Seo
+        title="404 // Coordinate Not Found | ZALTRON ROBOTICS"
         description="The requested robotic trajectory or node does not exist."
       />
 

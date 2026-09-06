@@ -2,10 +2,10 @@ import React from 'react';
 
 export function StatusBadge({ status, className = '' }) {
   if (!status) return null;
-  
+
   const norm = status.toUpperCase();
   let category = 'concept';
-  
+
   if (norm.includes('ACTIVE') || norm.includes('DEV')) {
     category = 'active';
   } else if (norm.includes('PROTO')) {

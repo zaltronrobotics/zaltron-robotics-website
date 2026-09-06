@@ -8,14 +8,14 @@ import { CheckCircle2, AlertCircle } from 'lucide-react';
 export function Solutions() {
   return (
     <>
-      <Seo 
-        title="Solutions & Target Applications | ZALTRON ROBOTICS" 
+      <Seo
+        title="Solutions & Target Applications | ZALTRON ROBOTICS"
         description="Explore envisioned real-world deployment domains for the ZALTRON robotics ecosystem: logistics, inspection, agriculture, and academic testbeds."
       />
 
       <main className="section-spacing bg-grid-tech">
         <div className="container">
-          <SectionHeader 
+          <SectionHeader
             eyebrow="APPLICATION DOMAINS"
             title="Engineered for Practical Utility"
             description="Our robotic platforms are designed with clear target applications in mind. Explore where specialized ZALTRON machines are envisioned to deliver tangible real-world value."

@@ -44,19 +44,19 @@ export const verifiedKnowledge = [
 export const searchKnowledge = (query) => {
   if (!query || typeof query !== 'string') return null;
   const q = query.toLowerCase().trim();
-  
+
   // Exact or keyword match
   for (const item of verifiedKnowledge) {
     if (item.keywords.some(k => q.includes(k) || k.includes(q))) {
       return item;
     }
   }
-  
+
   // Word overlap match
   const qWords = q.split(/\s+/).filter(w => w.length > 2);
   let bestItem = null;
   let maxMatches = 0;
-  
+
   for (const item of verifiedKnowledge) {
     let matches = 0;
     for (const word of qWords) {
@@ -69,9 +69,9 @@ export const searchKnowledge = (query) => {
       bestItem = item;
     }
   }
-  
+
   if (maxMatches > 0) return bestItem;
-  
+
   return {
     question: query,
     answer: 'ZALTRON ROBOTICS is an engineering initiative building intelligent robots and autonomous systems. For specific technical inquiries not covered here, please reach out directly at zaltronrobotics@gmail.com or explore our GitHub repository at github.com/zaltronrobotics.'

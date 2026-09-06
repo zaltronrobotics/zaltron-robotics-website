@@ -43,7 +43,7 @@ export function HardwareExploded() {
   ];
 
   return (
-    <div style={{ background: 'var(--bg-surface)', border: '1px solid var(--border-subtle)', borderRadius: '4px', padding: '2.5rem' }}>
+    <div style={{ background: 'var(--bg-surface)', border: '1px solid var(--border-subtle)', borderRadius: '4px', padding: 'clamp(1.25rem, 3.5vw, 2.5rem)' }}>
       <div style={{ marginBottom: '2rem' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem' }}>
           <div>
@@ -59,7 +59,7 @@ export function HardwareExploded() {
         </p>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: '1rem' }}>
         {layers.map((layer, idx) => {
           const Icon = layer.icon;
           const isSelected = activeLayer === idx;
@@ -71,7 +71,7 @@ export function HardwareExploded() {
               style={{
                 background: isSelected ? 'var(--bg-surface-active)' : 'var(--bg-surface-elevated)',
                 border: `1px solid ${isSelected ? 'var(--accent-blue)' : 'var(--border-subtle)'}`,
-                padding: '1.5rem',
+                padding: '1.25rem 1rem',
                 borderRadius: '2px',
                 cursor: 'pointer',
                 transition: 'all var(--transition-fast)',
